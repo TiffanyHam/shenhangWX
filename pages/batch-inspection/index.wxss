@@ -1,0 +1,55 @@
+.list-item {
+  padding: 0 20rpx;
+  background: #fff;
+}
+
+.list-item .item {
+  /* height: 45px; */
+  line-height: 45px;
+  border-bottom: 1px solid #F0F0F0;
+}
+
+.list-item .item .name,
+.flight-number .name {
+  font-size: 32rpx;
+  color: #101010;
+  width: 150rpx;
+  display: inline-block;
+  text-align: left;
+}
+
+.list-item .item text {
+  font-size: 28rpx;
+  color: #888;
+}
+
+.flight-number {
+  display: flex;
+  padding-top: 20rpx;
+}
+
+.flight-number.phone {
+  border-bottom: 1px solid #F0F0F0;
+}
+
+.flight-number .details {
+  font-size: 28rpx;
+  color: #888;
+  width: 615rpx;
+}
+
+.flight-number .details view {
+  margin-bottom: 10px;
+}
+
+.list-item .item .label {
+  float: right;
+  font-size: 24rpx;
+  padding: 3px;
+  height: 20px;
+  line-height: 20px;
+  background: #FF7C50;
+  color: #fff;
+  border-radius: 4px;
+  margin-top: 10px;
+}

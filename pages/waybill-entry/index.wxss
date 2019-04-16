@@ -1,0 +1,107 @@
+.list-body {
+  top: 0;
+}
+
+.list-item {
+  padding: 0 20rpx;
+  background: #fff;
+}
+
+.list-item .item {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  border-bottom: 1px solid #F0F0F0;
+}
+
+.list-item .unit-item {
+  display: flex;
+}
+
+.list-item .unit-item .details {
+  display: flex;
+  align-items: center;
+  width: 380rpx!important;
+}
+
+.list-item .unit-item .inputs {
+  display: inline-block;
+  width: 180rpx!important;
+}
+
+.list-item .unit-item .details .name {
+  width: 100rpx!important;
+}
+
+
+.list-item .unit-item .details .unitsss {
+  color: #888;
+  width: 110rpx!important;
+}
+
+.list-item .item .waybill-input {
+  display: flex;
+  align-content: center;
+}
+
+.waybill-input .prefix-number {
+  width: 80rpx;
+}
+
+.list-item .item view:nth-child(2) {
+  width: 100%;
+}
+
+.list-item .item input {
+  height: 45px;
+}
+
+.list-item .item .name {
+  font-size: 32rpx;
+  color: #101010;
+  width: 290rpx;
+  display: inline-block;
+  text-align: left;
+  margin-right: 20rpx;
+}
+
+.list-item .unit-item .name {
+  margin-right:45rpx;
+}
+
+.list-item .item .unit {
+  color: #888;
+  width: 100rpx;
+  text-align: right;
+}
+
+.list-item .item text {
+  font-size: 28rpx;
+}
+
+.flight-number {
+  display: flex;
+  padding-top: 20rpx;
+}
+
+.flight-number .details {
+  font-size: 28rpx;
+  color: #888;
+  width: 615rpx;
+}
+
+.flight-number .details view {
+  margin-bottom: 10px;
+}
+
+.fight-numer-input {
+  width: 400rpx;
+}
+
+.list-item .carrier .name {
+  color: #888;
+}
+
+.select {
+  color: #888!important;
+}

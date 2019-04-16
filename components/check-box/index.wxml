@@ -1,0 +1,4 @@
+<view class='check-box{{checked?" checked":""}}' bindtap='selectCheckBox'>
+  <icon class='icon' type='success_no_circle' size='10' color='#fff' />
+  <text class='text' style='{{color?"color:"+color+";":""}}' wx:if='{{label}}'>{{label}}</text>
+</view>

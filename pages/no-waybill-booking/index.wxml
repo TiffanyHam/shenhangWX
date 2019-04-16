@@ -1,0 +1,56 @@
+<view class="body">
+  <view class='line10'></view>
+  <view class='platform-box'>
+    <view>
+      <text class='title'>始发站</text>
+      <input wx:if="{{!initdepCityName.length}}" placeholder='如：深圳' class="{{!cityStartCheck ? 'red':''}}" value='{{depCode}}' bindblur='inputStart' bindfocus='inputFocusStart'></input>
+
+      <picker wx:else bindchange="startCityChange" style='margin-top: 5px' value="{{initdepIndex}}" range="{{initdepCityName}}">
+          <view class="picker">
+            {{initdepCityName[initdepIndex]}}
+          </view>
+        </picker>
+
+    </view>
+    <view class='arrow-box'>
+     <image src="/assets/images/two-way-arrow.png"></image>
+    </view>
+     <view class='end-platform'>
+      <text class='title'>目的站</text>
+      <input placeholder='如：北京' value='{{destCode}}' bindblur='inputEnd' bindfocus='inputFocusEnd' class="{{!cityEndCheck ? 'red' : ''}}"></input>
+    </view>
+  </view>
+  <view class='platform-box'>
+     <view class='flight-number'>
+        <text>中转城市</text>
+        <input placeholder='中文名/三字码' value='{{transCity}}' bindblur='inputTransCity' bindfocus='inputFocusTransCity' class="{{!transCityCheck ? 'red' : ''}}"></input>
+     </view>
+   </view>
+    <view class='platform-box'>
+     <view class='flight-number'>
+        <text>头程航班</text>
+        <input placeholder='如 ZH9582'  maxlength='6' value='{{flightNo}}'  bindinput='inputFlightNo' class="{{!checkFlag ? 'red' : '' }}" bindfocus='inputFocusflight'></input>
+     </view>
+   </view>
+    <view class='platform-box'>
+     <view class='flight-number'>
+        <text>二程航班</text>
+        <input placeholder='如 ZH9582' class="{{!transFlightCheckFlag ? 'red' : '' }}"  maxlength='6' value='{{transFlightNo}}' bindinput='transFlightNoInput' bindfocus='inputFocusTransFlightNo'></input>
+     </view>
+   </view>
+    <view class='platform-box'>
+     <view class='flight-number'>
+        <text>日期</text>
+        <picker
+      mode="date"
+      value="{{date}}"
+      bindchange="bindDateChange"
+    >
+      <view class="picker">
+        <text>{{date}}</text>
+      </view>
+    </picker>
+     </view>
+   </view>
+     <button class='submit' bindtap="waybillSearch">查询</button>
+</view>

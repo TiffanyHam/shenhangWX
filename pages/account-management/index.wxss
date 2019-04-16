@@ -1,0 +1,31 @@
+.body {
+  background: #F6F6F6;
+}
+.info-box {
+  height: 90px;
+  width: 100%;
+  padding: 0 40rpx;
+  box-sizing: border-box;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info-box .avatar {
+  display: flex;
+  align-items: center;
+}
+
+.info-box .avatar .avatar-img {
+  width: 120rpx;
+  height: 120rpx;
+  margin-right: 20rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.info-box .avatar .numer {
+  font-size: 14px;
+  color: #888;
+}

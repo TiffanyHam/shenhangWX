@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#fa4a3b",
+  "usingComponents": {
+    "check-box": "../../components/check-box/index"
+  }
+}

@@ -1,0 +1,149 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.4.0",
+	"appid": "wxb6e251b561a1c925",
+	"projectname": "%E6%B7%B1%E8%88%AA%E8%B4%A7%E8%BF%90",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 14,
+			"list": [
+				{
+					"id": -1,
+					"name": "Login",
+					"pathName": "pages/login/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "运单查询",
+					"pathName": "pages/batch-inspection/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "航班号查询",
+					"pathName": "pages/fight-number-inquiry/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "飞机号查询",
+					"pathName": "pages/aircraft-number-inquiry/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "飞机号查询列表",
+					"pathName": "pages/aircraft-inquiry-list/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "无运单订舱",
+					"pathName": "pages/no-waybill-booking/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "无运单订舱列表",
+					"pathName": "pages/no-waybill-list/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 8,
+					"name": "舱位批复",
+					"pathName": "pages/class-approval/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "舱位批复列表",
+					"pathName": "pages/class-approval-list/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "批舱查询",
+					"pathName": "pages/batch-search/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "批舱查询列表",
+					"pathName": "pages/batch-search-list/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "运单录入",
+					"pathName": "pages/waybill-entry/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "账号管理",
+					"pathName": "pages/account-management/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "预加载页面",
+					"pathName": "pages/preloading/index",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,20 @@
+<view class='body'>
+  <view class='login-logo'><image src='/assets/images/log.jpg'></image></view>
+  <view class='form-box'>
+    <view class='text-box'>
+      <image class='admin-icn' src='/assets/images/user.png'></image>
+      <input class='text' placeholder-class='placeholder' type='text' value='{{username}}' placeholder='用户名' bindblur='inputUsername' maxlength='20' />
+    </view>
+    <view class='text-box'>
+      <image class='admin-icn' src='/assets/images/password.png'></image>
+      <input class='text' placeholder-class='placeholder' type='password'  value='{{password}}' placeholder='密码' bindblur='inputPassword' maxlength='60'/>
+    </view>
+     <!-- <label class="checkbox">
+   <checkbox color="#0078d7"/>
+   与微信号绑定
+  </label> -->
+  <check-box label='与微信号绑定' color='#101010' checked='{{false}}' bindchange='checkAll' />
+  </view>
+ 
+  <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class='submit{{disable?" disable":""}}'>登录</button>
+</view>

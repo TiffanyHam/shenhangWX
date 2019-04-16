@@ -1,0 +1,28 @@
+.check-box {
+  display: flex;
+  align-items: center;
+}
+
+.check-box .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+  border: 1rpx solid #e5e5e5;
+  background-color: #fff;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.checked .icon {
+  background-color: #0078D7;
+}
+
+.check-box .text {
+  margin-left: 5px;
+  font-size: 14px;
+  color: #101010;
+  line-height: 1.2;
+}

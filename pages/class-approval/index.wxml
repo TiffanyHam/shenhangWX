@@ -1,0 +1,67 @@
+<view class="body">
+  <view class='line10'></view>
+  <view class='platform-box'>
+    <view>
+      <text class='title'>始发站</text>
+      <input placeholder='如：深圳' class="{{!cityStartCheck ? 'red':''}}" value='{{depCode}}' bindblur='inputStart' bindfocus='inputFocusStart'></input>
+    </view>
+    <view class='arrow-box'>
+      <image src="/assets/images/two-way-arrow.png"></image>
+    </view>
+    <view class='end-platform'>
+      <text class='title'>目的站</text>
+      <input placeholder='如：北京' value='{{destCode}}' bindblur='inputEnd' bindfocus='inputFocusEnd' class="{{!cityEndCheck ? 'red' : ''}}"></input>
+    </view>
+  </view>
+  <view class='platform-box'>
+    <view class='flight-number'>
+      <text>中转城市</text>
+       <input placeholder='中文名/三字码' value='{{transferCity}}' bindblur='inputTransCity' bindfocus='inputFocusTransCity' class="{{!transCityCheck ? 'red' : ''}}"></input>
+    </view>
+  </view>
+  <view class='platform-box'>
+    <view class='flight-number'>
+      <text>航班号</text>
+       <input placeholder='如 ZH9582'  maxlength='6' value='{{flightNo}}'  bindinput='inputFlightNo' class="{{!checkFlag ? 'red' : '' }}" bindfocus='inputFocusflight'></input>
+    </view>
+  </view>
+  <view class='platform-box'>
+    <view>
+      <picker
+      mode="date"
+      value="{{startDate}}"
+      bindchange="bindstartDateChange"
+    >
+      <view class="picker">
+        <text>{{startDate}}</text>
+      </view>
+    </picker>
+    </view>
+    <view>
+      <text style='color: #bbb'>—</text>
+    </view>
+    <view class='end-platform'>
+       <picker
+      mode="date"
+      value="{{endDate}}"
+      bindchange="bindendDateChange"
+    >
+      <view class="picker">
+        <text>{{endDate}}</text>
+      </view>
+    </picker>
+    </view>
+  </view>
+  <view class='platform-box'>
+    <view class='flight-number'>
+      <text>代理人</text>
+      <input placeholder='如 SZXAJT' maxlength='10' value='{{agentCoode}}' bindinput='inputAgentCoode'></input>
+    </view>
+  </view>
+  <view class='platform-box'>
+     <check-box label='未批复' color='#101010' checked='{{unapproved}}' bindchange="unapprovedCheckAll"/>
+    <check-box label='拒绝' color='#101010' checked='{{refuse}}' bindchange="refuseCheckAll" />
+    <check-box label='已批复' color='#101010' checked='{{approved}}' bindchange="approvedCheckAll" />
+  </view>
+  <button class='submit{{disable?" disable":""}}' bindtap="approvalSearch">查询</button>
+</view>

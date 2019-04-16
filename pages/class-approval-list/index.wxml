@@ -1,0 +1,180 @@
+<view class='body'>
+  <scroll-view class='list-body' bindscrolltolower="onReachBottom">
+  <block wx:for="{{approvalData}}" wx:key="item">
+    <view class='line10'></view>
+    <view class='list-item'>
+      <view class='item head'>
+        <view class='name'>
+          <text>{{item.batchCabinSelectRes[0].flightNo}}</text>
+          <text class='tips f88' wx:if="{{item.batchCabinSelectRes[0].shipStatus == '拒绝'}}">拒绝</text>
+          <text class='tips d78' wx:if="{{item.batchCabinSelectRes[0].shipStatus == '未批复'}}">未批复</text>
+          <text class='tips' wx:if="{{item.batchCabinSelectRes[0].shipStatus == '已批复'}}">已批复</text>
+        </view>
+        <view class='label'>{{item.batchCabinSelectRes[0].flightDate}}</view>
+      </view>
+
+      <view class='item' wx:if="{{approvalFlagArry[index]}}">
+        <view class='details'>
+          <view>{{item.batchCabinSelectRes[0].takeoffTime}}</view>
+          <view>{{item.batchCabinSelectRes[0].depName}}</view>
+        </view>
+        <view class='img'>
+          <image src='/assets/images/aircraft.png'></image>
+        </view>
+        <view class='details'>
+          <view>{{item.batchCabinSelectRes[0].arrivalTime}}</view>
+          <view>{{item.batchCabinSelectRes[0].destName}}</view>
+        </view>
+      </view>
+
+
+      <view class='item head' wx:if="{{item.batchCabinSelectRes[1]}}">
+        <view class='name'>
+          <text>{{item.batchCabinSelectRes[1].flightNo}}</text>
+          <!-- <text class='tips'>{{item.batchCabinSelectRes[1].shipStatus}}</text> -->
+          <text class='tips f88' wx:if="{{item.batchCabinSelectRes[1].shipStatus == '拒绝'}}">拒绝</text>
+          <text class='tips d78' wx:if="{{item.batchCabinSelectRes[1].shipStatus == '未批复'}}">未批复</text>
+          <text class='tips' wx:if="{{item.batchCabinSelectRes[1].shipStatus == '已批复'}}">已批复</text>
+        </view>
+        <view class='label'>{{item.batchCabinSelectRes[1].flightDate}}</view>
+      </view>
+
+      <view wx:if="{{approvalFlagArry[index]}}">
+
+        <view class='item' wx:if="{{item.batchCabinSelectRes[1]}}">
+         <view class='details'>
+          <view>{{item.batchCabinSelectRes[1].takeoffTime}}</view>
+          <view>{{item.batchCabinSelectRes[1].depName}}</view>
+        </view>
+        <view class='img'>
+          <image src='/assets/images/aircraft.png'></image>
+        </view>
+        <view class='details'>
+          <view>{{item.batchCabinSelectRes[1].arrivalTime}}</view>
+          <view>{{item.batchCabinSelectRes[1].destName}}</view>
+        </view>
+        </view>
+
+        <view class='item'>
+          <view class='details approval-box'>
+            <view>订舱总量</view>
+            <view>{{item.batchCabinSelectRes[0].totalBooking}}</view>
+          </view>
+          <view class='details approval-box'>
+            <view>品名</view>
+            <view>{{item.batchCabinSelectRes[0].goodsName}}</view>
+          </view>
+          <view class='details approval-box'>
+            <view>锂电池运输资质</view>
+            <view>{{item.ldcFlag}}</view>
+          </view>
+        </view>
+        <view class='item'>
+          <view class='details approval-box'>
+            <view>舱位</view>
+          </view>
+          <view class='details approval-box'>
+            <view>订舱量</view>
+          </view>
+          <view class='details approval-box'>
+            <view>批舱量</view>
+          </view>
+        </view>
+        <view class='item'>
+          <view class='details approval-box'>
+            <view>
+              <text class='d78'>F舱</text>
+            </view>
+          </view>
+          <view class='details approval-box'>
+            <view>{{item.batchCabinSelectRes[0].fBooking}}</view>
+          </view>
+          <view class='details approval-box'>
+            <view>
+              <input placeholder='请输入批舱量' value='{{fReply[index]}}' type='number' maxlength='10' data-index='{{index}}' bindblur='fReplyBlur'></input>
+            </view>
+          </view>
+        </view>
+        <view class='item'>
+          <view class='details approval-box'>
+            <view>
+              <text class='d78'>C舱</text>
+            </view>
+          </view>
+          <view class='details approval-box'>
+            <view>{{item.batchCabinSelectRes[0].cBooking}}</view>
+          </view>
+          <view class='details approval-box'>
+            <view>
+              <input placeholder='请输入批舱量' value='{{cReply[index]}}' type='number' maxlength='10' data-index='{{index}}' bindblur='cReplyBlur'></input>
+            </view>
+          </view>
+        </view>
+        <view class='item'>
+          <view class='details approval-box'>
+            <view>
+              <text class='d78'>其他</text>
+            </view>
+          </view>
+          <view class='details approval-box'>
+            <view>{{item.batchCabinSelectRes[0].otherBooking}}</view>
+          </view>
+          <view class='details approval-box'>
+            <view>
+              <input placeholder='请输入批舱量' value='{{otherReply[index]}}' type='number' maxlength='10' data-index='{{index}}' bindblur='otherReplyBlur'></input>
+            </view>
+          </view>
+        </view>
+
+        <view class='btn-box item'>
+          <button class='expand-btn cancel' type='default' data-index="{{index}}" bindtap="expand">取消</button>
+          <button class='expand-btn' bindtap="refuse"  data-index="{{index}}">拒绝</button>
+          <button class='expand-btn' bindtap="submit"  data-index="{{index}}">提交</button>
+        </view>
+      </view>
+
+      <view wx:else>
+        <view class='item'>
+          <view class='details approval-show-box'>
+            <view>
+              F舱
+            </view>
+          </view>
+          <view class='details approval-show-box'>
+            <text>订舱量 {{item.batchCabinSelectRes[0].fBooking}};</text>
+            <text>批舱量 {{item.batchCabinSelectRes[0].fReply}};</text>
+          </view>
+        </view>
+        <view class='item'>
+          <view class='details approval-show-box'>
+            <view>
+              C舱
+            </view>
+          </view>
+          <view class='details approval-show-box'>
+            <text>订舱量 {{item.batchCabinSelectRes[0].cBooking}};</text>
+            <text>批舱量 {{item.batchCabinSelectRes[0].cReply}};</text>
+          </view>
+        </view>
+        <view class='item'>
+          <view class='details approval-show-box'>
+            <view>
+              其他
+            </view>
+          </view>
+          <view class='details approval-show-box'>
+            <text>订舱量 {{item.batchCabinSelectRes[0].otherBooking}};</text>
+            <text>批舱量 {{item.batchCabinSelectRes[0].otherReply}};</text>
+          </view>
+        </view>
+        <view class='btn-box' wx:if="{{item.batchCabinSelectRes[0].shipStatus != '拒绝'}}">
+          <button class='expand-btn' bindtap="expand" data-index="{{index}}">展开批舱</button>
+        </view>
+      </view>
+    </view>
+  </block> 
+    <view class="no-more-goods" hidden='{{loadingMoreHidden}}'>已无更多数据</view>
+    <view class="no-more-goods no-datas" hidden='{{noDataHidden}}'>暂无数据</view>
+    <view hidden='{{loadingHidden}}' class='loading-text'>加载中...</view>
+  </scroll-view>
+</view>

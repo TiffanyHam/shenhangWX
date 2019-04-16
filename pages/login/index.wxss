@@ -1,0 +1,73 @@
+.body {
+  padding: 90rpx;
+  height: 100%;
+  background: #f6f6f6;
+}
+
+.login-logo {
+  text-align: center;
+  margin-top: 20rpx;
+}
+
+.login-logo image {
+  display: inline-block;
+  width: 440rpx;
+  height: 110rpx;
+}
+
+.form-box {
+  padding: 50rpx 0;
+}
+
+.text-box {
+  display: flex;
+  align-items: center;
+  margin: 30rpx 0 40rpx;
+  padding: 0 20rpx;
+  border: 1px solid #dcdfe6;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.text-box .text {
+  width: 100%;
+  flex: 1;
+  padding: 20rpx 0;
+  font-size: 28rpx;
+  line-height: 1.2;
+  color: #000100;
+}
+
+.text-box .placeholder {
+  color: #93969c;
+}
+
+.text-box .icon {
+  margin-right: 10px;
+}
+
+.text-box .clear {
+  margin-left: 10px;
+}
+
+.text-box .code {
+  margin-left: 10px;
+  width: 6em;
+  font-size: 28rpx;
+  color: #cf4141;
+  line-height: 1.2;
+  text-align: right;
+}
+
+.form-box .admin-icn {
+  display: inline-block;
+  width: 35rpx;
+  height: 35rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+
+.checkbox {
+  color: #313131;
+  font-weight: bold;
+}

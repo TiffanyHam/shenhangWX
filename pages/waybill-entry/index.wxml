@@ -1,0 +1,176 @@
+<view class='body'>
+  <scroll-view class='list-body' bindscrolltolower="onReachBottom" hidden="{{searchInputFlag}}">
+    <view class='line10'></view>
+    <view class='list-item'>
+      <view class='item'>
+        <view class='name'>运单号</view>
+        <view class='waybill-input'>
+          <input value='{{awbPrefix}}' class="prefix-number" bindblur='fixWaybillCheck'></input>
+          <text style='line-height: 45px'>-</text>
+          <input placeholder="如 12345678" class="search-input" value='{{awbNo}}' maxlength="30" confirm-type="搜索" bindblur='waybillCheck'>
+          </input>
+        </view>
+      </view>
+      <view class='item'>
+        <view class='name'>始发站</view>
+        <!-- <view class='full'>
+          <input placeholder='如 深圳' value='{{depCode}}' bindblur='startCity'></input>
+        </view> -->
+        <picker bindchange="startCityChange" value="{{startCityIndex}}" range="{{startCityName}}">
+          <view class="picker">
+            {{startCityName[startCityIndex]}}
+          </view>
+        </picker>
+      </view>
+      <view class='item'>
+        <view class='name'>到达站</view>
+        <view>
+          <input placeholder='深圳' value='{{destCode}}' bindblur='endCity'></input>
+        </view>
+      </view>
+      <view class='item'>
+        <view class='name'>中转城市</view>
+        <view class='fight-numer-input'>
+          <input placeholder='如南京（直达航班可不填）' value='{{transCity}}' bindblur='transCityBlur'></input>
+        </view>
+      </view>
+    </view>
+    <view class='line10'></view>
+    <view class='list-item'>
+      <view class='item'>
+        <view class='name'>头程航班日期</view>
+        <view>
+          <picker mode="date" value="{{flightDate}}" bindchange="bindDateChange">
+            <view class="picker">
+              <text class='time'>{{flightDate}}</text>
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class='item'>
+        <view class='name'>头程航班号</view>
+        <view>
+          <picker bindchange="bindPickerChange" value="{{flightIndex}}" range="{{flightArray}}">
+            <view class="picker {{flightIndex == 0 ? 'select' : ''}}">
+              {{flightArray[flightIndex]}}
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class='item'>
+        <view class='name'>头程承运人</view>
+        <view>
+          <text wx:if="{{carrierCodeFlag}}">{{carrierCode}}</text>
+          <picker wx:else bindchange="bindCarrierChange" value="{{carrierArryIndex}}" range="{{carrierArry}}">
+            <view class="picker {{carrierArryIndex == 0 ? 'select' : ''}}">
+              {{carrierArry[carrierArryIndex]}}
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class='item carrier' wx:if="{{transCity}}">
+        <view class='name'>二程航班日期</view>
+        <view>
+          <picker mode="date" value="{{transDate}}" bindchange="bindtransDateChange">
+            <view class="picker">
+              <text class='time'>{{transDate}}</text>
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class='item carrier' wx:if="{{transCity}}">
+        <view class='name'>二程航班号</view>
+        <view>
+          <picker bindchange="bindPickercarrierChange" value="{{flightcarrierIndex}}" range="{{flightcarrierArray}}">
+            <view class="picker {{flightcarrierIndex == 0 ? 'select' : ''}}">
+              {{flightcarrierArray[flightcarrierIndex]}}
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class='item carrier' wx:if="{{transCity}}">
+        <view class='name'>二程承运人</view>
+        <view>
+          <text wx:if="{{transCarrierCodeFlag}}">{{transCarrierCode}}</text>
+          <picker wx:else bindchange="bindTransCarrierChange" value="{{transCarrierIndex}}" range="{{carrierArry}}">
+            <view class="picker {{transCarrierIndex == 0 ? 'select' : ''}}">
+              {{carrierArry[transCarrierIndex]}}
+            </view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <view class='line10'></view>
+    <view class='list-item'>
+      <view class='item'>
+        <view class='name'><view>货物代码</view>及品名</view>
+        <view>
+          <picker bindchange="bindGoodChange" value="{{goodInfoIndex}}" range="{{goodInfoArry}}">
+            <view class="picker {{goodInfoIndex == 0 ? 'select' : ''}}">
+              {{goodInfoArry[goodInfoIndex]}}
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class='item unit-item'>
+        <view class='details'>
+          <view class='name'>件数</view>
+          <view class='inputs'>
+            <input placeholder='如 10' maxlength='10' value='{{pieces}}' bindinput='numberPieces'></input>
+          </view>
+          <view class='unitsss'>
+            <text>件</text>
+          </view>
+        </view>
+        <view class='details'>
+          <view class='name'>重量</view>
+          <view class='inputs'>
+            <input placeholder='如 10' value='{{weight}}' bindinput='weightBlur'></input>
+          </view>
+          <view class='unitsss'>
+            <text>公斤</text>
+          </view>
+        </view>
+      </view>
+      <!-- <view class='item unit-item'>
+        <view class='name'>重量</view>
+        <view>
+          <input placeholder='如 10' value='{{weight}}' bindblur='weightBlur'></input>
+        </view>
+        <view class='unit'>公斤</view>
+      </view> -->
+      <!-- <view class='item unit-item'>
+        <view class='name'>剩余舱位</view>
+        <view>
+          <text>{{remainingSpace}}</text>
+        </view>
+        <view class='unit'>公斤</view>
+      </view> -->
+      <!-- <view class='item'>
+        <view class='name'>使用舱位</view>
+        <view>
+         <text>{{useCabin}}</text>
+        </view>
+      </view> -->
+      <view class='item'>
+        <view class='name'>运价代码</view>
+        <view>
+          <picker bindchange="bindCodesChange" value="{{billCodesIndex}}" range="{{billCodesArry}}">
+            <view class="picker {{billCodesIndex == 0 ? 'select' : ''}}">
+              {{billCodesArry[billCodesIndex]}}
+            </view>
+          </picker>
+        </view>
+      </view>
+      <view class='item'>
+        <view class='name'>代理人</view>
+        <view>
+          <text>{{agentCode}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='btn-box'>
+      <button class='submit' bindtap='submit'>提交</button>
+    </view>
+  </scroll-view>
+</view>

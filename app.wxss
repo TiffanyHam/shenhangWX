@@ -1,0 +1,207 @@
+page {
+  height: 100%;
+}
+
+.body {
+  height: 100%;
+  background-color: #fff;
+  box-sizing: border-box;
+  color: #1a1a1a;
+  font-size: 28rpx;
+}
+
+/* 搜索 */
+.search-view {
+  /* position: fixed; */
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+}
+
+.search-view-bg {
+ background: #fff;
+}
+
+.search-view .name {
+  font-size: 28rpx;
+  width: 100rpx;
+  padding-left: 20rpx;
+  text-align: center;
+  color: #101010;
+  margin-top: 30rpx;
+}
+
+.serarch-content {
+  background: white;
+  width: 510rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: auto;
+  padding-left: 20rpx;
+  padding-bottom: auto;
+  margin: auto 20rpx;
+  height: 70rpx;
+  border-radius: 4px;
+  border:1px solid #eaeaea;
+  background: #F8F8F8;
+  box-sizing: border-box;
+}
+
+.serarch-content .prefix-number {
+  width: 60rpx;
+  margin-right: 10rpx;
+}
+
+
+.search-icon {
+  margin-right: 20rpx;
+}
+
+.search-btn {
+  width: 60rpx;
+  height:60rpx;
+  margin-top: 24rpx;
+  margin-right: 20rpx;
+}
+
+.search-input {
+  width: 320rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+
+.search-list {
+  width: 100%;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  background: #fff;
+  position: absolute;
+  z-index: 100;
+}
+
+.search-list .item {
+  padding: 30rpx 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.search-list .item:hover {
+  background: #fafafa;
+}
+
+.no-license-plate {
+  text-align:center;
+  margin-top:20%;
+}
+
+.fixed-box {
+  width: 100%;
+  position: fixed;
+  background: #fff;
+  z-index: 111;
+}
+
+.list-body {
+  position: absolute;
+  top: 100rpx;
+}
+
+.loading-text,.no-more-goods {
+  color: #999;
+  text-align: center;
+  font-size: 28rpx;
+  height:80rpx;
+  line-height:80rpx;
+}
+
+.no-datas {
+  margin-top: 50%;
+}
+
+.car-address-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx;
+}
+
+.clear-icon {
+  display: inline-block;
+  width: 32rpx;
+  height: 32rpx;
+  background: url('https://tapi.sf-trailernet.com/images/miniapp/icon_error@2x.png') no-repeat 0 0;
+  background-size: contain;
+}
+
+.submit-btns {
+  margin: 60rpx 100rpx;
+  border-radius: 50px;
+  background: #ffad0f;
+  color: #fff;
+}
+
+
+.red {
+  color: #e64340!important;
+}
+
+.fr {
+  float: right;
+}
+
+.line10 {
+  width: 100%;
+  height: 10px;
+  background: #f2f2f2;
+}
+
+.line20 {
+  width: 100%;
+  height: 40rpx;
+  background: #f2f2f2;
+}
+
+.f29b {
+  color: #29b493;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.submit {
+  padding: 10px 0;
+  margin: 80rpx 60rpx;
+  font-size: 28rpx;
+  color: #fff;
+  line-height: 1.2;
+  text-align: center;
+  border-radius: 4px;
+  background-color: #e64340;
+}
+
+.submit.disable {
+  color: rgba(255, 255, 255, 0.5);
+  background-color: #e64340;
+}
+
+picker {
+  width: 100%;
+}
+
+picker .time {
+  width: 100%;
+  display: inline-block;
+}
+
+.d78 {
+  color: #0078d7!important;
+}
+
+.f00 {
+  color: #e64340;
+}
+
+.f88 {
+  color: #888!important;
+}

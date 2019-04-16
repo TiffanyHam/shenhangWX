@@ -1,0 +1,28 @@
+<view class='body' wx:if="{{menus.length}}">
+  <view class="swiper-container">
+    <swiper class="swiper_box" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
+      <block wx:for="{{banners}}" wx:key="id">
+        <swiper-item>
+          <image bindtap="tapBanner" src="{{item}}" class="slide-image" width="750rpx" height="400rpx" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="dots">
+      <block wx:for="{{banners}}" wx:key="unique">
+        <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>
+      </block>
+    </view>
+  </view>
+  <view class='navigator-box'>
+    <block wx:for='{{menus}}' wx:key='item' wx:index='index'>
+      <view class='navigator-item'>
+        <navigator class='item' url='{{item.menuUrl}}'>
+          <view class='img'>
+            <image src='/assets/images/{{item.icon}}.png'></image>
+          </view>
+          <view>{{item.menuName}}</view>
+        </navigator>
+      </view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,52 @@
+
+.platform-box {
+  display: flex;
+  margin-top: 20rpx;
+  padding: 20rpx 30rpx;
+  justify-content: space-between;
+  border-bottom: 1px solid #F0F0F0;
+}
+
+.platform-box .arrow-box  {
+  width: 240rpx;
+  text-align: center;
+}
+
+.platform-box .arrow-box image {
+  display: inline-block;
+  width:52rpx;
+  height: 52rpx;
+} 
+
+.platform-box .end-platform {
+ justify-items: flex-end;
+ text-align: right;
+}
+
+.platform-box view text {
+  font-size: 32rpx;
+  width: 130rpx;
+}
+
+.platform-box view text.title {
+  font-size: 36rpx;
+}
+
+.platform-box view input {
+  font-size: 28rpx;
+  width: 100%;
+}
+
+.flight-number {
+  display: flex;
+  width: 100%;
+}
+
+.flight-number text {
+  margin-right: 60rpx;
+}
+
+.picker .time {
+  color: #919191;
+  font-size: 28rpx;
+}

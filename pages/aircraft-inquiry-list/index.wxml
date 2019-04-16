@@ -1,0 +1,44 @@
+<view class='body'>
+  <scroll-view class='list-body' bindscrolltolower="onReachBottom">
+    <view class='list-item'>
+      <block wx:for="{{aircraftData}}" wx:key="item">
+        <view class='line10'></view>
+        <view class='item head'>
+          <view class='name'>
+            <text>{{item.depName}}</text>
+            <image src='/assets/images/single-arrow.png'></image>
+            <text>{{item.destName}}</text>
+          </view>
+          <view class='label'>{{item.flightDate}}</view>
+        </view>
+
+        <block wx:for="{{item.flightNoInfos}}" wx:for-item="v" wx:key="v">
+
+          <view class='item'>
+            <view class='details'>
+              <view>{{v.actDepartTime}}</view>
+              <view>{{v.depName}}</view>
+            </view>
+            <view class='img'>
+              <image src='/assets/images/aircraft.png'></image>
+            </view>
+            <view class='details'>
+              <view>{{v.actArrivalTime}}</view>
+              <view>{{v.destName}}</view>
+            </view>
+          </view>
+          <view class='inquiry-info'>
+            <text>航班 {{v.flightNo}}</text>
+            <text> | </text>
+            <text>飞机号 {{v.planeNo}}</text>
+            <text> | </text>
+            <text> 飞机类型 {{v.planeCode}}</text>
+          </view>
+        </block>
+      </block>
+    </view>
+    <view class="no-more-goods" hidden='{{loadingMoreHidden}}'>已无更多数据</view>
+    <view class="no-more-goods no-datas" hidden='{{noDataHidden}}'>暂无数据</view>
+    <view hidden='{{loadingHidden}}' class='loading-text'>加载中...</view>
+  </scroll-view>
+</view>

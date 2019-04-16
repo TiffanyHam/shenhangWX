@@ -1,0 +1,25 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/index",
+    "pages/batch-inspection/index",
+    "pages/fight-number-inquiry/index",
+    "pages/aircraft-number-inquiry/index",
+    "pages/aircraft-inquiry-list/index",
+    "pages/no-waybill-booking/index",
+    "pages/no-waybill-list/index",
+    "pages/class-approval/index",
+    "pages/class-approval-list/index",
+    "pages/batch-search/index",
+    "pages/batch-search-list/index",
+    "pages/waybill-entry/index",
+    "pages/account-management/index",
+    "pages/preloading/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}

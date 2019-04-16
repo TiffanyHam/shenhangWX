@@ -1,0 +1,73 @@
+<view class='body'>
+  <view class='fixed-box'>
+    <view class="search-view search-view-bg">
+      <view class='name'>运单号</view>
+      <view class="serarch-content"> 
+        <input value='{{awbPrefix}}' maxlength='3' bindinput='awbFixInput' class="prefix-number"></input>
+        <text>-</text>
+        <input placeholder="如 12345678" maxlength='8' type='number' class="search-input" value='{{awbNo}}' maxlength="30" bindinput='awbInput'>
+        </input>
+        <text class="clear-icon" bindtap="clearInput" wx:if="{{clearFlag}}"></text>
+      </view>
+      <view class='search-btn' bindtap='search'>
+        <icon type="search" size="26"/>
+      </view>
+    </view>
+  </view>
+ <scroll-view class='list-body' bindscrolltolower="onReachBottom">
+   <view class='line10' wx:if="{{awbInfo.depCode}}"></view>
+   <view class='list-item' wx:if="{{awbInfo.depCode}}">
+    <view class='item'>
+      <text class='name'>运单号</text>
+      <text>{{awbInfo.awbPrefixNo}}</text>
+      <text class='label' wx:if="{{awbInfo.checkState}}">已配未核单</text>
+    </view>
+    <view class='item'>
+      <text class='name'>始发站</text>
+      <text>{{awbInfo.depCode || ''}}</text>
+    </view>
+    <view class='item'>
+      <text class='name'>到达站</text>
+      <text>{{awbInfo.destCode || ''}}</text>
+    </view>
+    <view class='flight-number'>
+      <view class='name'>航班号</view>
+      <view class='details'>
+        <view>
+        {{awbInfo.flightNo || ''}} 
+          <text style='margin-left: 15px' class='f88' wx:if="{{awbInfo.flightStatus === '未起飞'}}">{{awbInfo.flightStatus}}</text>
+          <text style='margin-left: 15px' class='f00' wx:elif="{{awbInfo.flightStatus === '飞行中'}}">{{awbInfo.flightStatus}}</text>
+          <text style='margin-left: 15px' class='d78' wx:else="{{awbInfo.flightStatus === '已降落'}}">{{awbInfo.flightStatus}}</text>
+        </view> 
+        <view>实际起飞时间  {{awbInfo.actDepartTime || ''}}</view> 
+        <view>实际到达时间  {{awbInfo.actArrivalTime || ''}}</view> 
+      </view>
+    </view>
+   </view>
+   <view class='line10'></view>
+    <view class='list-item' wx:if="{{awbInfo.depCode}}">
+    <view class='item'>
+      <text class='name'>件数</text>
+      <text>{{awbInfo.pieces || ''}}</text>
+      <text class='fr'>件</text>
+    </view>
+    <view class='item'>
+      <text class='name'>重量</text>
+      <text> {{awbInfo.weight || ''}}</text>
+      <text class='fr'>公斤</text>
+    </view>
+     <view class='flight-number phone'>
+      <view class='name'>提货电话</view>
+      <view class='details' style='margin-left: 10rpx;'>
+        <view>{{awbInfo.telNo || ''}}</view> 
+      </view>
+    </view>
+    <view class='flight-number'>
+      <view class='name'>提货信息</view>
+      <view class='details' style='margin-left: 10rpx;'>
+        <view>{{awbInfo.transNote || ''}}</view> 
+      </view>
+    </view>
+   </view>
+ </scroll-view>
+</view>

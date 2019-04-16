@@ -1,0 +1,165 @@
+<view class='body'>
+  <scroll-view class='list-body' bindscrolltolower="onReachBottom">
+  <block wx:for="{{batchlData}}" wx:key="item">
+    <view class='line10'></view>
+    <view class='list-head'>
+      <view class='date'>
+        <view>{{item.batchCabinQueryRes[0].flightDate}}</view>
+        <view>{{item.batchCabinQueryRes[1].flightDate}}</view>
+      </view>
+      <view class='city'>{{item.batchCabinQueryRes[0].depName}}</view>
+      <view class='flight-number'>{{item.batchCabinQueryRes[0].flightNo}}</view>
+      <view class='city'>{{item.batchCabinQueryRes[0].destName}}</view>
+      <view class='flight-number'>{{item.batchCabinQueryRes[1].flightNo}}</view>
+      <view class='city'>{{item.batchCabinQueryRes[1].destName}}</view>
+    </view>
+    <view class='list-details'>
+      <view class='name'>
+        <text class='d78'>订舱/</text>
+        <text class='f00'>批舱</text>
+      </view>
+
+      <view class='details'>
+       <view>
+          <text>F:</text>
+          <text class='d78'>{{item.batchCabinQueryRes[0].fBooking}}/</text>
+          <text class='f00'>{{item.batchCabinQueryRes[0].fReply}}</text>
+          </view>
+          <view>
+           <text>Y:</text>
+          <text class='d78'>{{item.batchCabinQueryRes[0].otherBooking}}/</text>
+          <text class='f00'>{{item.batchCabinQueryRes[0].otherReply}}</text>
+        </view>
+      </view>
+     
+       <view class='details' style='margin-right: 30rpx;'>
+        <view>
+          <text>C:</text>
+          <text class='d78'>{{item.batchCabinQueryRes[0].cBooking}}/</text>
+          <text class='f00'>{{item.batchCabinQueryRes[0].cReply}}</text>
+        </view>
+        <view>
+          <text class='status' wx:if="{{item.batchCabinQueryRes[0].shipStatus =='已批复'}}">已批复</text>
+          <text class='status d78' wx:elif="{{item.batchCabinQueryRes[0].shipStatus == '未批复'}}">未批复</text>
+          <text class='status f88' wx:if="{{item.batchCabinQueryRes[0].shipStatus == '拒绝'}}">拒绝</text>
+        </view>
+      </view>
+    </view>
+    </block>
+    <!-- <view class='list-item'>
+      <view class='item head'>
+        <view class='name'>
+          <text>ZH9595</text>
+          <text class='tips'>已批复</text>
+        </view>
+        <view class='label'>2018-02-02</view>
+      </view>
+      <view class='item'>
+        <view class='details'>
+          <view>12:23</view>
+          <view>呼和浩特</view>
+        </view>
+        <view class='img'>
+          <image src='/assets/images/aircraft.png'></image>
+        </view>
+        <view class='details'>
+          <view>13:23</view>
+          <view>武汉</view>
+        </view>
+      </view>
+      <view class='item head'>
+        <view class='name'>
+          <text>ZH9595</text>
+          <text class='tips'>已批复</text>
+        </view>
+        <view class='label'>2018-02-02</view>
+      </view>
+      <view class='item'>
+        <view class='details'>
+          <view>12:23</view>
+          <view>呼和浩特</view>
+        </view>
+        <view class='img'>
+          <image src='/assets/images/aircraft.png'></image>
+        </view>
+        <view class='details'>
+          <view>13:23</view>
+          <view>武汉</view>
+        </view>
+      </view>
+      <view class='item'>
+        <view class='details approval-box'>
+          <view class='bold'>订舱总量</view>
+          <view>300</view>
+        </view>
+        <view class='details approval-box'>
+          <view class='bold'>品名</view>
+          <view>GEN</view>
+        </view>
+        <view class='details approval-box'>
+          <view class='bold'>锂电池运输资质</view>
+          <view>N</view>
+        </view>
+      </view>
+      <view class='item'>
+        <view class='details approval-box'>
+          <view class='bold'>舱位</view>
+        </view>
+        <view class='details approval-box'>
+          <view class='bold'>订舱量</view>
+        </view>
+        <view class='details approval-box'>
+          <view class='bold'>批舱量</view>
+        </view>
+      </view>
+      <view class='item'>
+        <view class='details approval-box'>
+          <view>
+            <text>F舱</text>
+          </view>
+        </view>
+        <view class='details approval-box'>
+          <view>0.00</view>
+        </view>
+        <view class='details approval-box'>
+          <view>
+            <text></text>
+          </view>
+        </view>
+      </view>
+      <view class='item'>
+        <view class='details approval-box'>
+          <view>
+            <text>C舱</text>
+          </view>
+        </view>
+        <view class='details approval-box'>
+          <view>300.00</view>
+        </view>
+        <view class='details approval-box'>
+          <view>
+            <text></text>
+          </view>
+        </view>
+      </view>
+      <view class='item'>
+        <view class='details approval-box'>
+          <view>
+            <text>Y舱</text>
+          </view>
+        </view>
+        <view class='details approval-box'>
+          <view>400.00</view>
+        </view>
+        <view class='details approval-box'>
+          <view>
+            <text></text>
+          </view>
+        </view>
+      </view>
+    </view> -->
+    <view class="no-more-goods" hidden='{{loadingMoreHidden}}'>已无更多数据</view>
+    <view class="no-more-goods no-datas" hidden='{{noDataHidden}}'>暂无数据</view>
+    <view hidden='{{loadingHidden}}' class='loading-text'>加载中...</view>
+  </scroll-view>
+</view>

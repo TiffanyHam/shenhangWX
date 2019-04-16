@@ -1,0 +1,19 @@
+<view class='body'>
+  <view class='line10'></view>
+  <view class='info-box'>
+    <view class='avatar'>
+      <view class="avatar-img"><open-data type="userAvatarUrl"></open-data></view>
+      <view class='name'>
+        <view><open-data type="userNickName"></open-data></view>
+        
+        <view class='numer'>{{userName}}</view>
+      </view>
+    </view>
+    <view class='tips'>
+      {{tips}}
+    </view>
+  </view>
+   <button class='submit{{disable?" disable":""}}' bindtap="bindingWhat">
+     {{btnText}} 
+  </button>
+</view>

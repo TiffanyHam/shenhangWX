@@ -1,0 +1,52 @@
+<view class="body">
+  <view class='line10'></view>
+  <view class='platform-box'>
+    <view>
+      <text class='title'>始发站</text>
+      <input placeholder='如：深圳' class="{{!cityStartCheck ? 'red' : ''}}" value='{{depCode}}' bindblur='inputStart' bindfocus='inputFocusStart'></input>
+    </view>
+    <view class='arrow-box'>
+     <image src="/assets/images/two-way-arrow.png"></image>
+    </view>
+     <view class='end-platform'>
+      <text class='title'>目的站</text>
+      <input placeholder='如：北京' class="{{!cityEndCheck ? 'red' : ''}}" value='{{destCode}}' bindblur='inputEnd' bindfocus='inputFocusEnd'></input>
+    </view>
+  </view>
+  <view class='platform-box'>
+    <view>
+      <picker
+      mode="date"
+      value="{{startDate}}"
+      bindchange="bindstartDateChange"
+    >
+      <view class="picker">
+        <!-- <text class='time' wx:if="{{startText}}">{{startText}}</text> -->
+        <text>{{startDate}}</text>
+      </view>
+    </picker>
+    </view>
+    <view>
+     <text style='color: #bbb'>—</text>
+    </view>
+    <view class='end-platform'>
+     <picker
+      mode="date"
+      value="{{endDate}}"
+      bindchange="bindendDateChange"
+    >
+      <view class="picker">
+        <!-- <text class='time' wx:if="{{endText}}">{{endText}}</text> -->
+        <text>{{endDate}}</text>
+      </view>
+    </picker>
+    </view>
+  </view>
+   <view class='platform-box'>
+     <view class='flight-number'>
+        <text>航班号</text>
+        <input placeholder='如 ZH9582' maxlength='6' value='{{flightNo}}' bindinput='inputFlightNo' class="{{!checkFlag ? 'red' : '' }}" bindfocus='inputFocusflight'></input>
+     </view>
+   </view>
+     <button class='submit' bindtap="aircraftSearch">查询</button>
+</view>

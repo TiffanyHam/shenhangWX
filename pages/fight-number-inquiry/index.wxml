@@ -1,0 +1,79 @@
+<view class='body'>
+  <view class='fixed-box'>
+   <view class='platform-box'>
+    <view>
+      <text class='title'>始发站</text>
+      <input placeholder='如：深圳' class="{{!cityStartCheck ? 'red' : ''}}" value='{{depCode}}'  bindblur='inputStart' bindfocus='inputFocusStart'></input>
+    </view>
+    <view class='arrow-box'>
+     <image src="/assets/images/two-way-arrow.png"></image>
+    </view>
+     <view class='end-platform'>
+      <text class='title'>目的站</text>
+      <input placeholder='如：北京' class="{{!cityEndCheck ? 'red' : ''}}" value='{{destCode}}' bindblur='inputEnd' bindfocus='inputFocusEnd'></input>
+    </view>
+  </view>
+    <view class="search-view search-view-bg">
+      <view class='name'>航班号</view>
+      <view class="serarch-content">
+        <input placeholder="如 ZH9582或9582" class="search-input {{!checkFlag ? 'red' :''}}" value='{{flightNo}}' maxlength="30" bindinput='flightNoInput' bindfocus='inputFocusflight'>
+        </input>
+        <text class="clear-icon" bindtap="clearInput" wx:if="{{clearFlag}}"></text>
+      </view>
+    </view>
+    <view class="search-view search-view-bg">
+      <view class='name'>日 期</view>
+      <view class="serarch-content">
+        <picker mode="date" value="{{date}}" bindchange="bindDateChange">
+          <view class="picker">
+            <!-- <text class='time' wx:if="{{startText}}">{{startText}}</text> -->
+            <text>{{date}}</text>
+          </view>
+        </picker>
+      </view>
+      <view class='search-btn' bindtap='search'>
+        <icon type="search" size="26" />
+      </view>
+    </view>
+    <!-- <view>
+     <button class='submit' bindtap='search'>查询</button>
+    </view> -->
+  </view>
+  <scroll-view class='list-body' bindscrolltolower="onReachBottom">
+    <block wx:for="{{flightData}}" wx:key="item">
+      <view class='line10'></view>
+      <view class='list-item'>
+        <view class='item head'>
+          <view class='name'>
+            <text>{{item.depName}}</text>
+            <image src='/assets/images/single-arrow.png'></image>
+            <text>{{item.destName}}</text>
+          </view>
+          <view class='label'>{{item.flightNo}}</view>
+          <view class='label'>{{item.flightDate}}</view>
+        </view>
+        <block wx:for="{{item.flightNumberInfos}}" wx:for-item="v" wx:key="v">
+        <view class='item'>
+          <view class='details'>
+            <view>{{v.etdTime}}</view>
+            <view>{{v.depName}}</view>
+            <view>{{v.flightDate}}</view>
+          </view>
+          <view class='img'>
+            <image src='/assets/images/aircraft.png'></image>
+          </view>
+          <view class='details'>
+            <view>{{v.etaTime}}</view>
+            <view>{{v.destName}}</view>
+            <view>{{v.flightDate}}</view>
+          </view>
+        </view>
+        </block>
+      </view>
+    </block>
+
+    <view class="no-more-goods" hidden='{{loadingMoreHidden}}'>已无更多数据</view>
+    <view class="no-more-goods no-datas" hidden='{{noDataHidden}}'>暂无数据</view>
+    <view hidden='{{loadingHidden}}' class='loading-text'>加载中...</view>
+  </scroll-view>
+</view>
